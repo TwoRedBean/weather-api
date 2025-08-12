@@ -1,8 +1,21 @@
+target/
+
 # Compiled class file
 *.class
 
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
 # Log file
 *.log
+*.tmp
+*.swp
 
 # BlueJ files
 *.ctxt
@@ -22,3 +35,16 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
