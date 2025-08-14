@@ -14,7 +14,7 @@ An API to query weather data by city and country. This app runs on **port 8080**
 ```
 git clone https://github.com/TwoRedBean/weather-api.git
 ```
-2. Set your API key in 
+2. Set your API key in the application.yml file
 ```
 app:
    api-key: [your_api_key]
