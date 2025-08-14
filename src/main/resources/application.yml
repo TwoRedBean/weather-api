@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: weather-api
+
+app:
+  api-key: 44d9a28ed534725b18676c5c4dec8244
+  base-url: https://api.openweathermap.org/data/2.5/weather
