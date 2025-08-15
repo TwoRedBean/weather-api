@@ -1,6 +1,19 @@
 spring:
   application:
     name: weather-api
+  datasource:
+    url: jdbc:h2:file:./src/main/resources/data/weather_data
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  sql:
+    init:
+      mode: always
+  h2:
+    console:
+      enabled: true
 
 app:
   api-key: 44d9a28ed534725b18676c5c4dec8244
