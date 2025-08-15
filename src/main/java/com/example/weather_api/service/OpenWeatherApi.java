@@ -19,8 +19,8 @@ public class OpenWeatherApi {
     private final RestTemplate restTemplate = new RestTemplate();
     private final ObjectMapper mapper = new ObjectMapper();
 
-    public String getWeather() {
-        String url = String.format("%s?q=%s&appid=%s", baseUrl, "london,uk", apiKey);
+    public String getWeather(String city, String country) {
+        String url = String.format("%s?q=%s,%s&appid=%s", baseUrl, city, country, apiKey);
 
         try {
             String response = restTemplate.getForObject(url, String.class);
