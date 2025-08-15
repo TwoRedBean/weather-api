@@ -2,11 +2,13 @@ package com.example.weather_api.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
+@Slf4j
 public class OpenWeatherApi {
 
     @Value("${app.api-key}")
@@ -18,14 +20,15 @@ public class OpenWeatherApi {
     private final ObjectMapper mapper = new ObjectMapper();
 
     public String getWeather() {
-        String url = String.format("%s?q=%s&appid=%s", baseUrl, "London,uk", apiKey);
+        String url = String.format("%s?q=%s&appid=%s", baseUrl, "london,uk", apiKey);
 
         try {
             String response = restTemplate.getForObject(url, String.class);
             JsonNode root = mapper.readTree(response);
             return root.get("weather").get(0).get("description").asText();
         } catch (Exception e) {
-            throw new RuntimeException("Failed to get weather from weather API: ", e);
+            log.error(e.getMessage());
+            throw new RuntimeException("Failed to get weather from weather API.");
         }
     }
 }
