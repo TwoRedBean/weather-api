@@ -18,5 +18,7 @@ spring:
       enabled: true
 
 app:
-  api-key: 44d9a28ed534725b18676c5c4dec8244
-  base-url: https://api.openweathermap.org/data/2.5/weather
+  open-weather-api:
+    api-key: 44d9a28ed534725b18676c5c4dec8244
+    base-url: https://api.openweathermap.org/data/2.5/weather
+  api-keys: key1,key2,key3,key4,key5

@@ -11,9 +11,9 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 public class OpenWeatherApi {
 
-    @Value("${app.api-key}")
+    @Value("${app.open-weather-api.api-key}")
     private String apiKey;
-    @Value("${app.base-url}")
+    @Value("${app.open-weather-api.base-url}")
     private String baseUrl;
 
     private final RestTemplate restTemplate = new RestTemplate();
