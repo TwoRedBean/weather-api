@@ -1,6 +1,6 @@
 # Weather API
 
-An API to query weather data by city and country. Weather data is acquire from open weather API and is updated every 1 hour. This app runs on **port 8080**.
+An API to query weather data by city and country. Weather data is acquired from open weather API and is updated every 1 hour. This app runs on **port 8080**.
 
 ---
 
