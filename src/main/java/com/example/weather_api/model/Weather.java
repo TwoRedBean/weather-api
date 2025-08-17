@@ -26,7 +26,6 @@ public class Weather {
     @Column(nullable = false)
     private String description;
 
-    @Column(name = "created_date_time", nullable = false, updatable = false, insertable = false)
-    @Setter(AccessLevel.NONE)
-    private LocalDateTime createdDateTime;
+    @Column(name = "last_updated", nullable = false)
+    private LocalDateTime lastUpdated;
 }
