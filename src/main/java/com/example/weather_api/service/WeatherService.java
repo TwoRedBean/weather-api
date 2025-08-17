@@ -16,9 +16,7 @@ public class WeatherService {
     private final WeatherRepository weatherRepository;
     private final OpenWeatherApi openWeatherApi;
 
-    public String getWeather() {
-        String city = "london";
-        String country = "uk";
+    public String getWeather(String city, String country) {
         LocalDateTime thresholdTime = LocalDateTime.now().minusHours(1);
 
         return weatherRepository.findByCityAndCountry(city, country)
