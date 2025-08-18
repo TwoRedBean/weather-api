@@ -70,6 +70,7 @@ public class ApiKeyFilter extends OncePerRequestFilter {
     private boolean isRateLimitExceeded(String apiKey) {
         ApiUsage usage = usageMap.computeIfAbsent(apiKey, k -> new ApiUsage());
 
+        // Change to concurrent hashmap for better performance
         synchronized (usage) {
             LocalDateTime now = LocalDateTime.now();
             LocalDateTime resetTime = usage.startTime.plusHours(windowHours);
